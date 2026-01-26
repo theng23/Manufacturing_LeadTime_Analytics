@@ -6,7 +6,14 @@ The solution transforms raw operational data into a Power BI dashboard that supp
 
 
 ## Architecture
-<img width="4151" height="3154" alt="LEADTIME_WORKFLOW_PROCESS" src="https://github.com/user-attachments/assets/4a63ea05-1519-47f6-b12f-53c9ad544008" />
+This project follows a Lakehouse architecture pattern:
+
+- Raw data ingestion (Bronze)
+- Standardized transformations (Silver)
+- Analytics-ready data model (Gold)
+
+Below is the end-to-end workflow:
+<img width="5900" height="3296" alt="LEADTIME_WORKFLOW" src="https://github.com/user-attachments/assets/7e4bbcf7-c2d3-46f4-b130-277e5d388563" />
 
 ## Data flow
 1. Data Sources: ERP + XLSX
