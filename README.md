@@ -1,14 +1,10 @@
-# Manufacturing_LeadTime_Pipeline_Analytics
+# Manufacturing_LeadTime_Analytics
 
+## Introduction
 - End-to-end Lakehouse data pipeline for manufacturing lead time
 - Ingests ERP and Excel data, standardizes and models analytics-ready datasets
 - Built with Python, Spark, Delta Lake, and Power BI
 - Designed for scalable, production-style analytics
-
-## Introduction
-Manufacturing Lead Time Pipeline & Analytics is an end-to-end data platform designed to collect, standardize, and analyze manufacturing lead time across multiple operational stages.
-
-The solution transforms raw operational data from an ERP system and manually maintained Excel files into an analytics-ready data model, serving a Power BI dashboard for monitoring delays, bottlenecks, and process performance.
 
 ## Problem Context
 Manufacturing lead time data is fragmented across multiple systems:
@@ -23,6 +19,14 @@ The objective of this project is to build a centralized and automated data pipel
 Provide end-to-end visibility of manufacturing lead time from order initiation to final shipment.
 
 The platform aims to align ERP data with actual production workflows, improve data accuracy and accountability across departments, and establish a reliable foundation for operational planning, auditing, and future automation.
+
+## Technology Stack
+- Python (Pandas, PyArrow)
+- Apache Spark / PySpark
+- Delta Lake
+- Microsoft Fabric / OneLake
+- Lakehouse Architecture
+- Power BI & DAX
 
 ## Architecture
 This project follows a Lakehouse architecture pattern:
@@ -80,13 +84,6 @@ The Gold layer acts as the single source of truth for analytics.
 - Business metrics and KPIs defined
 - Power BI dashboard for monitoring lead time performance
 
-## Technology Stack
-- Python (Pandas, PyArrow)
-- Apache Spark / PySpark
-- Delta Lake
-- Microsoft Fabric / OneLake
-- Lakehouse Architecture
-- Power BI & DAX
 
 ## Data Modeling
 
@@ -111,6 +108,11 @@ CREATE TABLE IF NOT EXISTS LEADTIME.SILVER_FACT_LEADTIME (
 USING DELTA;
 ```
 
+## Pipeline Execution
+<img width="858" height="308" alt="image (8)" src="https://github.com/user-attachments/assets/4268579d-a1e7-45cd-b4ba-1bd4972cb50a" />
+
+This image illustrates a successful end-to-end execution of the pipeline, from Silver layer transformation to semantic model refresh.
+
 ## Outcomes & Capabilities
 
 The platform establishes a structured and analytics-ready foundation for
@@ -132,7 +134,4 @@ The dashboard design follows a two-level structure:
 - Granular breakdown of duration within each production stage
 - Clear separation of stage-specific process components
 
-## Pipeline Execution
-<img width="858" height="308" alt="image (8)" src="https://github.com/user-attachments/assets/4268579d-a1e7-45cd-b4ba-1bd4972cb50a" />
 
-This image illustrates a successful end-to-end execution of the pipeline, from Silver layer transformation to semantic model refresh.
