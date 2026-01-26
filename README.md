@@ -32,7 +32,7 @@ This project follows a Lakehouse architecture pattern:
 
 Below is the end-to-end workflow:
 
-<img width="5900" height="3296" alt="LEADTIME_WORKFLOW" src="https://github.com/user-attachments/assets/7e4bbcf7-c2d3-46f4-b130-277e5d388563" />
+<img width="6149" height="3323" alt="LEADTIME_WORKFLOW" src="https://github.com/user-attachments/assets/386764e8-cf7a-4605-95f4-f6e36acb3742" />
 
 ## Data Pipeline Flow
 
