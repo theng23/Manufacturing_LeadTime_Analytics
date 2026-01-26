@@ -98,7 +98,7 @@ and minimize Power BI relationship complexity for operational reporting.
 ### Example: Silver Lead Time Fact Table (Simplified)
 
 ```sql
-CREATE TABLE silver_fact_leadtime (
+CREATE TABLE IF NOT EXISTS LEADTIME.SILVER_FACT_LEADTIME (
     leadtime_key STRING,
     brand STRING,
     style STRING,
