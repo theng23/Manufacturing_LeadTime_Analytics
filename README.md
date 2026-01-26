@@ -136,18 +136,3 @@ The dashboard design follows a two-level structure:
 <img width="858" height="308" alt="image (8)" src="https://github.com/user-attachments/assets/4268579d-a1e7-45cd-b4ba-1bd4972cb50a" />
 
 This image illustrates a successful end-to-end execution of the pipeline, from Silver layer transformation to semantic model refresh.
-
-
-
-
-Manufacturing Lead Time Pipeline & Analytics
-
-Designed and built an end-to-end Lakehouse data pipeline to unify manufacturing lead time data fragmented across an ERP system and manually maintained Excel files.
-
-Implemented an automated ingestion process to crawl ERP data using authenticated session cookies and ingest operational Excel inputs into a Bronze layer for traceability and reprocessing.
-
-Developed Spark-based transformation logic to standardize schemas, normalize date formats, generate business keys, and consolidate datasets into a denormalized Silver fact table optimized for analytics consumption.
-
-Modeled an analytics-ready Gold layer and semantic model to simplify downstream reporting and enable efficient Power BI consumption with minimal relationship complexity.
-
-Delivered a scalable data foundation that provides consistent, end-to-end visibility of manufacturing lead time stages and supports reliable reporting and exploratory analysis.
