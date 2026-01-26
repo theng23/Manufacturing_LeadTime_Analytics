@@ -1,4 +1,4 @@
-# Manufacturing_LeadTime_Analytics
+# Manufacturing LeadTime Analytics
 
 ## Introduction
 - End-to-end Lakehouse data pipeline for manufacturing lead time
@@ -21,6 +21,23 @@ Provide end-to-end visibility of manufacturing lead time from order initiation t
 The platform aims to align ERP data with actual production workflows, improve data accuracy and accountability across departments, and establish a reliable foundation for operational planning, auditing, and future automation.
 
 ## Technology Stack
+
+</details>
+  
+<br>
+
+| Category | Technology | Purpose |
+|--------|------------|---------|
+| Data Processing | Python (Pandas, PyArrow) | Ingest and preprocess ERP and Excel data, perform initial cleansing, and write data in Parquet format |
+| Distributed Processing | Apache Spark / PySpark | Transform and standardize data in the Silver layer, including joins, deduplication, and business logic |
+| Storage & ACID | Delta Lake | Store Silver and Gold datasets with ACID guarantees and support incremental upserts |
+| Data Platform | Microsoft Fabric / OneLake | Central Lakehouse platform for data storage, notebook execution, and pipeline orchestration |
+| Architecture | Lakehouse Architecture | Enable end-to-end data flow from raw ingestion to analytics-ready datasets |
+| Analytics & Visualization | Power BI | Build semantic models and dashboards for lead time analysis and reporting |
+
+
+
+
 - Python (Pandas, PyArrow)
 - Apache Spark / PySpark
 - Delta Lake
@@ -41,11 +58,18 @@ Below is the end-to-end workflow:
 ## Data Pipeline Flow
 
 ### 1. Data Sources
-- **ERP System**
-  - Operational manufacturing data
-- **Excel (XLSX) Files**
-  - Planning data
-  - Warehouse and shipment-related inputs
+
+</details>
+
+<br>
+
+| Dataset | Source |
+|-------|-------|
+|Shipment Date|Planning files|
+|Docket Received Date & Fabric Stock-in Date|Warehouse and shipment-related inputs|
+|Production Leadtime |ERP files|
+|Phase 1 & Phase 2 on ERP|ERP files|
+|Other Information|ERP System|
 
 Some critical lead time milestones are not fully available in ERP and are maintained manually via Excel, requiring additional normalization and validation.
 
