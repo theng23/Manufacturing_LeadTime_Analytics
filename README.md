@@ -90,5 +90,40 @@ The Gold layer acts as the single source of truth for analytics.
 - Microsoft Fabric / OneLake
 - Lakehouse Architecture
 - Power BI & DAX
- 
+
+## Data Model
+<img width="452" height="295" alt="Screenshot 2026-01-26 112756" src="https://github.com/user-attachments/assets/d282da30-739d-4611-b61f-9cc037eff9fb" />
+
+The Silver layer uses a denormalized lead time fact table to simplify analytics and minimize Power BI relationship complexity for operational reporting.
+
+```
+sql
+CREATE TABLE IF NOT EXISTS LEADTIME.SILVER_FACT_LEADTIME (
+    BRAND_NAME STRING,
+    CODE STRING,
+    DEPARTMENT STRING,
+    TEAM_FINAL STRING,
+    STYLE_INTERNAL STRING,
+    SEASON STRING,
+    DROP STRING,
+    COLOR STRING,
+    ORDER_INTERNAL STRING,
+    ORDER_EXTERNAL STRING,
+    STYLE_NAME STRING,
+    PRODUCT_TYPE STRING,
+    WORK_TYPE STRING,
+    SKU STRING,
+    SKU_INTERNAL STRING,
+    PO_SUBMIT_DATE STRING,
+    CUSTOMER_EXPECTED_DATE STRING,
+    ACTUAL_EXF_DATE STRING,
+    MONTH_YEAR STRING,
+    CATEGORY STRING,
+    SUB_CATEGORY STRING
+
+)
+USING DELTA;
+
+
+```
   
