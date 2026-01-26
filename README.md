@@ -18,6 +18,13 @@ Manufacturing lead time data is fragmented across multiple systems:
 
 The objective of this project is to build a centralized and automated data pipeline that transforms raw operational data into a reliable analytics foundation.
 
+## Primary Goal
+
+Provide end-to-end visibility of manufacturing lead time from order initiation to final shipment.
+
+The platform aims to align ERP data with actual production workflows, improve data accuracy and accountability across departments, and establish a reliable foundation for operational planning, auditing, and future automation.
+
+
 ## Architecture
 This project follows a Lakehouse architecture pattern:
 
