@@ -1,4 +1,8 @@
 # Manufacturing_LeadTime_Pipeline_Analytics
+- End-to-end Lakehouse data pipeline for manufacturing lead time
+- Ingests ERP and Excel data, standardizes and models analytics-ready datasets
+- Built with Python, Spark, Delta Lake, and Power BI
+- Designed for scalable, production-style analytics
 
 ## Introduction
 Manufacturing Lead Time Pipeline & Analytics is an end-to-end data platform designed to collect, standardize, and analyze manufacturing lead time across multiple operational stages.
@@ -35,24 +39,49 @@ Data Flow
      
 Some critical lead time milestones are not fully available in ERP and are maintained manually via Excel, requiring additional normalization and validation.
 
-1. Data Sources: ERP + XLSX
-2. Ingest (12:15PM daily):
-   - Crawl ERP -> Raw JSON
-   - Read XLSX convert to CSV
-   - Combine -> Bronze Masterfile
-   - Store parquet-> Local + Upload OneLake -> Lakehouse Bronze
-3. Transform (Silver):
-    - Spark read Delta/Bronze Data -> Standardize + Join
-    - Create Dim tables
-    - Transform Fact
-    - Generate unique keys
-    - Create temp views
-    - Upsert Fact table to Silver
-4. Gold
-    - Create MasterFile -> Star Schema
-5. Serving
-    - Semantic Moldel
-    - Power BI dasboard
+2. Ingestion Layer (Bronze)
+- Scheduled daily ingestion
+- Crawl ERP system and store raw JSON snapshots
+- Read Excel files and convert to CSV
+- Persist raw data as Parquet
+- Upload data to OneLake (Lakehouse Bronze layer)
+
+**Purpose**
+- Preserve raw data
+- Enable replay and reprocessing
+- Avoid business logic at ingestion stage
+
+3. Transformation Layer (Silver)
+- Read Bronze data using Spark
+- Standardize column names and data types
+- Normalize date formats
+- Join ERP and Excel datasets
+- Generate business keys
+- Deduplicate records
+- Create validated fact and dimension datasets
+- Upsert transformed data into Silver tables
+
+This layer focuses on data quality, consistency, and business alignment.
+
+4. Analytics Layer (Gold)
+- Consolidate Silver datasets
+- Apply Star Schema modeling
+- Separate fact and dimension tables
+- Define consistent grains and metrics
+
+The Gold layer acts as the single source of truth for analytics.
+
+5. Serving Layer
+- Semantic model built on top of Gold data
+- Business metrics and KPIs defined
+- Power BI dashboard for monitoring lead time performance
+
+## Technology Stack
+- Python (Pandas, PyArrow)
+- Apache Spark / PySpark
+- Delta Lake
+- Microsoft Fabric / OneLake
+- Lakehouse Architecture
+- Power BI & DAX
  
-## 
   
