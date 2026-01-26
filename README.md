@@ -111,8 +111,7 @@ The Gold layer acts as the single source of truth for analytics.
 
 ## Data Modeling
 
-
-<img width="748" height="506" alt="Screenshot 2026-01-26 164823" src="https://github.com/user-attachments/assets/a11d16bd-f5a1-4e61-bc52-fb45d6f37f79" />
+<img width="722" height="501" alt="Screenshot 2026-01-26 164823" src="https://github.com/user-attachments/assets/8546d6f9-9374-40cd-add2-2c9b22c1d417" />
 
 The Silver layer uses a denormalized lead time fact table to simplify analytics
 and minimize Power BI relationship complexity for operational reporting.
