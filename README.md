@@ -149,3 +149,26 @@ The dashboard design follows a two-level structure:
 - Clear separation of stage-specific process components
 
 
+**BRONZE STAGE STRUCTURE**
+```
+Manufacturing_LeadTime_Analytics/
+├─ README.md
+├─ requirements.txt
+├─ run.bat
+├─ leadtime_master_pipeline/
+│  ├─ crawler/
+│  │  └─ erp_crawler.py
+│  ├─ raw/
+│  │  └─ erp_json/
+│  │     └─ YYYY-MM-DD/
+│  ├─ transform/
+│  │  ├─ bronze_transform.py
+│  │  ├─ silver_transform.py
+│  │  └─ utils/
+│  ├─ output/
+│  │  ├─ parquet/
+│  │  └─ logs/
+│  └─ upload/
+│     └─ upload_to_lake.py
+```
+
