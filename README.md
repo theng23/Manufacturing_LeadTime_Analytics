@@ -127,27 +127,6 @@ USING DELTA;
 
 This image illustrates a successful end-to-end execution of the pipeline, from Silver layer transformation to semantic model refresh.
 
-## Outcomes & Results
-
-The platform establishes a structured and analytics-ready foundation for
-analyzing manufacturing lead time across multiple production stages.
-
-It enables:
-- Consistent representation of lead time data across heterogeneous source systems
-- Stage-level visibility into process duration and sequencing
-- Simplified consumption for reporting and exploratory analysis
-
-The dashboard design follows a two-level structure:
-
-**Overview**
-- Consolidated view of end-to-end lead time
-- Flexible filtering for focused analysis
-- Comparative views to support interpretation across stages
-
-**Stage Details**
-- Granular breakdown of duration within each production stage
-- Clear separation of stage-specific process components
-
 ## Project Structure
 **BRONZE Stage Structure:**
 ```
@@ -192,3 +171,24 @@ Manufacturing_LeadTime_Analytics-main/
 
 ```
 
+
+## Outcomes & Results
+
+The platform establishes a structured and analytics-ready foundation for
+analyzing manufacturing lead time across multiple production stages.
+
+It enables:
+- Consistent representation of lead time data across heterogeneous source systems
+- Stage-level visibility into process duration and sequencing
+- Simplified consumption for reporting and exploratory analysis
+
+The dashboard design follows a two-level structure:
+
+**Overview**
+- Consolidated view of end-to-end lead time
+- Flexible filtering for focused analysis
+- Comparative views to support interpretation across stages
+
+**Stage Details**
+- Granular breakdown of duration within each production stage
+- Clear separation of stage-specific process components
