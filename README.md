@@ -127,7 +127,7 @@ USING DELTA;
 
 This image illustrates a successful end-to-end execution of the pipeline, from Silver layer transformation to semantic model refresh.
 
-## Outcomes & Capabilities
+## Outcomes & Results
 
 The platform establishes a structured and analytics-ready foundation for
 analyzing manufacturing lead time across multiple production stages.
