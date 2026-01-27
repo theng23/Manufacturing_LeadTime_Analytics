@@ -148,27 +148,47 @@ The dashboard design follows a two-level structure:
 - Granular breakdown of duration within each production stage
 - Clear separation of stage-specific process components
 
-
-**BRONZE STAGE STRUCTURE**
+## Project Structure
+**BRONZE Stage Structure:**
 ```
-Manufacturing_LeadTime_Analytics/
-├─ README.md
-├─ requirements.txt
-├─ run.bat
-├─ leadtime_master_pipeline/
-│  ├─ crawler/
-│  │  └─ erp_crawler.py
-│  ├─ raw/
-│  │  └─ erp_json/
-│  │     └─ YYYY-MM-DD/
-│  ├─ transform/
-│  │  ├─ bronze_transform.py
-│  │  ├─ silver_transform.py
-│  │  └─ utils/
-│  ├─ output/
-│  │  ├─ parquet/
-│  │  └─ logs/
-│  └─ upload/
-│     └─ upload_to_lake.py
+Manufacturing_LeadTime_Analytics-main/
+└─ leadtime_master_pipeline/
+   └─ leadtime-master-pipeline/
+      ├─ README.md
+      ├─ requirements.txt
+      ├─ config/
+      │  └─ __init__.py
+      ├─ ingestion/
+      │  ├─ __init__.py
+      │  ├─ crawler/
+      │  │  ├─ __init__.py
+      │  │  ├─ erp_cralwer.py
+      │  │  ├─ helper.py
+      │  │  └─ helper_phase1.py
+      │  └─ raw_storage/
+      │     ├─ __init__.py
+      │     └─ json_writer.py
+      ├─ transformation/
+      │  ├─ __init__.py
+      │  ├─ supervisor.py
+      │  └─ modules/
+      │     ├─ __init__.py
+      │     ├─ costing.py
+      │     ├─ cuttingdocket.py
+      │     ├─ fabric_trim.py
+      │     ├─ managecostingsheetclient.py
+      │     ├─ manageliststyleoforder.py
+      │     ├─ managepurchaseorder.py
+      │     ├─ mastergroupfabricpotabsofplanning_mastergrouppoitems.py
+      │     ├─ styleproductofplanning.py
+      │     ├─ technical.py
+      │     └─ treatment.py
+      ├─ storage/
+      │  ├─ __init__.py
+      │  └─ lake_uploader.py
+      └─ master_run/
+         ├─ run.bat
+         └─ setup_venv.py
+
 ```
 
