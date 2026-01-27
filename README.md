@@ -172,6 +172,24 @@ Manufacturing_LeadTime_Analytics-main/
 ```
 
 
+
+---
+
+**Configuration**
+
+Create `.env` from `config/.env.example`.
+
+| Key | Description | Example |
+|---|---|---|
+| ERP_BASE_URL | ERP system base URL | https://erp.company.local |
+| ERP_USERNAME | ERP login username | admin |
+| ERP_PASSWORD | ERP login password | ******** |
+| RAW_OUTPUT_PATH | Local raw landing folder for Bronze stage | ./ingestion/raw_storage/erp_json |
+| ENABLE_TRANSFORM | Enable transformation step | 1 |
+| ENABLE_UPLOAD | Enable lake upload step | 0 |
+| LAKE_OUTPUT_PATH | Target path for lake upload | ./storage/output |
+| LOG_PATH | Log file path | ./logs/bronze.log |
+
 ## Outcomes & Results
 
 The platform establishes a structured and analytics-ready foundation for
