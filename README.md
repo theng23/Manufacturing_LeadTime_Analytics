@@ -35,16 +35,6 @@ The platform aims to align ERP data with actual production workflows, improve da
 | Architecture | Lakehouse Architecture | Enable end-to-end data flow from raw ingestion to analytics-ready datasets |
 | Analytics & Visualization | Power BI | Build semantic models and dashboards for lead time analysis and reporting |
 
-
-
-
-- Python (Pandas, PyArrow)
-- Apache Spark / PySpark
-- Delta Lake
-- Microsoft Fabric / OneLake
-- Lakehouse Architecture
-- Power BI & DAX
-
 ## Architecture
 This project follows a Lakehouse architecture pattern:
 - Raw data ingestion (Bronze)
