@@ -28,9 +28,9 @@ The platform aims to align ERP data with actual production workflows, improve da
 
 | Category | Technology | Purpose |
 |--------|------------|---------|
-| Data Processing | Python (Pandas, PyArrow) | Ingest and preprocess ERP and Excel data, perform initial cleansing, and write data in Parquet format |
-| Distributed Processing | Apache Spark / PySpark | Transform and standardize data in the Silver layer, including joins, deduplication, and business logic |
-| Storage & ACID | Delta Lake | Store Silver and Gold datasets with ACID guarantees and support incremental upserts |
+| Data Processing | Python | Ingest and preprocess ERP and Excel data, perform initial cleansing, and write data in Parquet format |
+| Distributed Processing | PySpark / SQL | Transform and standardize data in the Silver layer, including joins, deduplication, and business logic |
+| Storage | Delta Lake | Store Silver and Gold datasets with ACID guarantees and support incremental upserts |
 | Data Platform | Microsoft Fabric / OneLake | Central Lakehouse platform for data storage, notebook execution, and pipeline orchestration |
 | Architecture | Lakehouse Architecture | Enable end-to-end data flow from raw ingestion to analytics-ready datasets |
 | Analytics & Visualization | Power BI | Build semantic models and dashboards for lead time analysis and reporting |
@@ -41,7 +41,7 @@ This project follows a Lakehouse architecture pattern:
 - Standardized transformations (Silver)
 - Analytics-ready data model (Gold)
 
-Below is the end-to-end workflow:
+Below is the end-to-end automation workflow:
 
 <img width="6149" height="3323" alt="LEADTIME_WORKFLOW" src="https://github.com/user-attachments/assets/386764e8-cf7a-4605-95f4-f6e36acb3742" />
 
