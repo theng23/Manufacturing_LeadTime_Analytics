@@ -132,7 +132,7 @@ USING DELTA;
 ```
 
 ## Project Structure
-**BRONZE Stage Structure:**
+### **Bronze Stage Structure:**
 ```
 Manufacturing_LeadTime_Analytics-main/
 └─ leadtime_master_pipeline/
@@ -175,8 +175,6 @@ Manufacturing_LeadTime_Analytics-main/
 
 ```
 
----
-
 **Configuration**
 
 Create `.env` from `config/.env.example`.
@@ -193,6 +191,7 @@ Create `.env` from `config/.env.example`.
 | LOG_PATH | Log file path | ./logs/bronze.log |
 
 ---
+### **Silver Stage Structure:**
 **Microsoft Fabric Workspace**
 
 ```
