@@ -216,6 +216,7 @@ Create `.env` from `config/.env.example`.
 
 ---
 **Pipeline Execution**
+
 <img width="858" height="308" alt="image (8)" src="https://github.com/user-attachments/assets/4268579d-a1e7-45cd-b4ba-1bd4972cb50a" />
 
 This image illustrates a successful end-to-end execution of the pipeline, from Silver layer transformation to semantic model refresh.
