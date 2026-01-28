@@ -20,6 +20,9 @@ Provide end-to-end visibility of manufacturing lead time from order initiation t
 
 The platform aims to align ERP data with actual production workflows, improve data accuracy and accountability across departments, and establish a reliable foundation for operational planning, auditing, and future automation.
 
+![Screenshot_28-1-2026_161310_](https://github.com/user-attachments/assets/a6a80a4b-e810-489b-bdff-0ce7b64612d9)
+
+
 ## Technology Stack
 
 </details>
@@ -64,11 +67,17 @@ Below is the end-to-end automation workflow:
 Some critical lead time milestones are not fully available in ERP and are maintained manually via Excel, requiring additional normalization and validation.
 
 ### 2. Ingestion Layer (Bronze)
+The Bronze layer is orchestrated locally via a master run script.
+It handles environment setup, ERP crawling, and raw data persistence
+before pushing data to the Lakehouse.
+
 - Scheduled daily ingestion
 - Crawl ERP system and store raw JSON snapshots
 - Read Excel files and convert to CSV
 - Persist raw data as Parquet
 - Upload data to OneLake (Lakehouse Bronze layer)
+
+
 
 **Purpose**
 - Preserve raw data
