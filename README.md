@@ -131,11 +131,6 @@ CREATE TABLE IF NOT EXISTS LEADTIME.SILVER_FACT_LEADTIME (
 USING DELTA;
 ```
 
-## Pipeline Execution
-<img width="858" height="308" alt="image (8)" src="https://github.com/user-attachments/assets/4268579d-a1e7-45cd-b4ba-1bd4972cb50a" />
-
-This image illustrates a successful end-to-end execution of the pipeline, from Silver layer transformation to semantic model refresh.
-
 ## Project Structure
 **BRONZE Stage Structure:**
 ```
@@ -180,8 +175,6 @@ Manufacturing_LeadTime_Analytics-main/
 
 ```
 
-
-
 ---
 
 **Configuration**
@@ -199,23 +192,111 @@ Create `.env` from `config/.env.example`.
 | LAKE_OUTPUT_PATH | Target path for lake upload | ./storage/output |
 | LOG_PATH | Log file path | ./logs/bronze.log |
 
+---
+**Microsoft Fabric Workspace**
+
+```
+│
+├─ Lakehouse
+│  ├─ bronze/
+│  │  └─ raw_erp_data (Delta / Parquet)
+│  │
+│  └─ silver/
+│     └─ SILVER_FACT_LEADTIME (Delta Table)
+│
+├─ Notebooks
+│  └─ SILVER_FACT_LEADTIME.ipynb
+│     - Read Bronze Delta tables
+│     - Apply business rules and leadtime logic
+│     - Generate validated Silver fact table
+│
+└─ Semantic Model (Power BI)
+   - Directly references SILVER_FACT_LEADTIME
+   - Auto-refresh after notebook execution
+```
+
+---
+**Pipeline Execution**
+<img width="858" height="308" alt="image (8)" src="https://github.com/user-attachments/assets/4268579d-a1e7-45cd-b4ba-1bd4972cb50a" />
+
+This image illustrates a successful end-to-end execution of the pipeline, from Silver layer transformation to semantic model refresh.
+
+--- 
+
+### **Silver Layer (Fabric Notebooks)**
+
+Input:
+- Bronze Delta tables from Lakehouse
+
+Processing:
+- Schema standardization
+- Date normalization
+- Business key generation
+- Leadtime calculation
+- Record validation and deduplication
+
+Output:
+- SILVER_FACT_LEADTIME (Delta table)
+
+
+### **Serving Layer (Power BI)**
+
+Input:
+- Silver Delta tables
+
+Features:
+- Power BI semantic model directly connected to Lakehouse
+- Automatic refresh triggered after Silver notebook execution
+- No manual dataset publishing required
+
+Purpose:
+- Provide a stable analytics interface
+- Decouple transformation logic from visualization
+
+
+
 ## Outcomes & Results
 
-The platform establishes a structured and analytics-ready foundation for
-analyzing manufacturing lead time across multiple production stages.
+This project delivers a scalable and analytics-ready foundation
+for manufacturing lead time analysis across multiple production stages.
 
-It enables:
-- Consistent representation of lead time data across heterogeneous source systems
-- Stage-level visibility into process duration and sequencing
-- Simplified consumption for reporting and exploratory analysis
+By consolidating ERP and Excel-based operational data into a unified
+Lakehouse architecture, the platform transforms fragmented and manual
+reporting processes into a consistent, automated analytics workflow.
 
-The dashboard design follows a two-level structure:
+### Key Outcomes
+
+- Established a single source of truth for manufacturing lead time data
+  across Fabric, Trim, Technical, Treatment, Costing, and Planning domains
+- Eliminated manual Excel consolidation by automating ingestion and
+  transformation of heterogeneous data sources
+- Standardized lead time definitions and calculation logic across stages
+- Enabled reliable historical analysis and trend comparison over time
+
+### Analytical Capabilities
+
+The resulting analytics layer enables:
+
+- End-to-end visibility from PO submission to actual ex-factory date
+- Stage-level lead time breakdown aligned with real operational workflows
+- Identification of delay patterns and bottlenecks across production stages
+- Consistent comparison of actual timelines versus expected milestones
+
+### Dashboard Design (Conceptual)
+
+The Power BI dashboard is designed around a two-level analytical structure:
 
 **Overview**
-- Consolidated view of end-to-end lead time
-- Flexible filtering for focused analysis
-- Comparative views to support interpretation across stages
+- Consolidated end-to-end lead time performance
+- High-level trend analysis across seasons, brands, and stages
+- Flexible filtering to support focused operational review
 
 **Stage Details**
-- Granular breakdown of duration within each production stage
-- Clear separation of stage-specific process components
+- Detailed visibility into individual production stages
+- Clear separation of process-specific lead time components
+- Support for root-cause analysis and operational follow-up
+
+Due to data confidentiality, the dashboard is not published with real data.
+However, the semantic model and metrics are fully defined and directly
+consumed from the Silver analytics layer.
+
