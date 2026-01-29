@@ -296,7 +296,3 @@ The Power BI dashboard is designed around a two-level analytical structure:
 - Clear separation of process-specific lead time components
 - Support for root-cause analysis and operational follow-up
 
-Due to data confidentiality, the dashboard is not published with real data.
-However, the semantic model and metrics are fully defined and directly
-consumed from the Silver analytics layer.
-
