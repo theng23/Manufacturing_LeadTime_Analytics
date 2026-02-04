@@ -20,8 +20,7 @@ Provide end-to-end visibility of manufacturing lead time from order initiation t
 
 The platform aims to align ERP data with actual production workflows, improve data accuracy and accountability across departments, and establish a reliable foundation for operational planning, auditing, and future automation.
 
-![Screenshot_28-1-2026_161310_](https://github.com/user-attachments/assets/a6a80a4b-e810-489b-bdff-0ce7b64612d9)
-
+![Screenshot_2-2-2026_222357_](https://github.com/user-attachments/assets/2d6a6c29-ac49-473d-b582-2369988b4f85)
 
 ## ⚒️Technology Stack
 
@@ -46,9 +45,10 @@ This project follows a Lakehouse architecture pattern:
 
 Below is the end-to-end automation workflow:
 
-<img width="6149" height="3323" alt="LEADTIME_WORKFLOW" src="https://github.com/user-attachments/assets/386764e8-cf7a-4605-95f4-f6e36acb3742" />
+<img width="6551" height="3769" alt="LEADTIME_WORKFLOW" src="https://github.com/user-attachments/assets/5216a4dc-c610-4e0e-b725-95e3776f0721" />
 
 ## 🔗Data Pipeline Flow
+
 
 ### 1. Data Sources
 
@@ -96,7 +96,7 @@ before pushing data to the Lakehouse.
 
 ## 📖Data Modeling
 
-<img width="722" height="501" alt="Screenshot 2026-01-26 164823" src="https://github.com/user-attachments/assets/8546d6f9-9374-40cd-add2-2c9b22c1d417" />
+<img width="722" height="501" alt="Screenshot 2026-01-26 164823 1" src="https://github.com/user-attachments/assets/e9a348e8-5d32-4be7-b05f-c6a863aff75d" />
 
 The Silver layer uses a denormalized lead time fact table to simplify analytics
 and minimize Power BI relationship complexity for operational reporting.
